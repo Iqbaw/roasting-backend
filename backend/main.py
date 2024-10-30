@@ -1,18 +1,17 @@
 from fastapi import FastAPI
-import requests
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-@app.get("/roast/")
-def get_social_data(username: str):
-    return {"username": username, "roast": "Kamu eksis banget disini, padahal real-life nya nolep wkwk."}
-
-from fastapi.middleware.cors import CORSMiddleware
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://roasting-frontend.vercel.app"],  # Pastikan domain sesuai dengan URL frontend kamu
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],    
+    allow_headers=["*"],
 )
+
+
+@app.get("/roast/")
+def get_social_data(username: str):
+    return {"username": username, "roast": "Kamu terlalu eksis di sini, padahal IRL sepi banget."}
