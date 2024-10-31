@@ -5,7 +5,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://roasting-frontend.vercel.app"],  # Pastikan domain sesuai dengan URL frontend kamu
+    allow_origins=["https://roasting-frontend-l8me41vhp-iqbalalbatmis-projects.vercel.app"],  # Pastikan domain sesuai dengan URL frontend kamu
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
