@@ -12,6 +12,7 @@ app.add_middleware(
 )
 
 
+@app.get("/roast")
 @app.get("/roast/")
 def get_social_data(username: str):
     return {"username": username, "roast": "Kamu terlalu eksis di sini, padahal IRL sepi banget."}
